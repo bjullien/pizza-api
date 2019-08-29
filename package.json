@@ -4,16 +4,26 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "create": "claudia create --profile claudia --region us-east-1 --api-module api",
-    "update": "claudia update --profile claudia"
+    "standardize": "prettier **/*.js --write",
+    "create": "npm run standardize && claudia create --profile claudia --region us-east-1 --api-module api",
+    "update": "npm run standardize && claudia update --profile claudia"
   },
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "claudia": "^5.8.0"
+    "claudia": "^5.8.0",
+    "prettier": "^1.18.2",
+    "tslint": "^5.19.0"
   },
   "dependencies": {
     "claudia-api-builder": "^4.1.2",
     "claudia-bot-builder": "^4.5.0"
+  },
+  "prettier": {
+    "printWidth": 90,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "parser": "typescript"
   }
 }
