@@ -1,0 +1,5 @@
+BOOK TESTING URL: https://whpcvzntil.execute-api.eu-central-1.amazonaws.com/chapter2_1/pizzas
+
+LATEST DEPLOYMENT: https://h1hsum2xr5.execute-api.us-west-1.amazonaws.com/latest/pizzas
+    ["Capricciosa","Quattro Formaggi","Napoletana","Margherita"]
+
