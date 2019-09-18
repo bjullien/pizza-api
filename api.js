@@ -2,8 +2,7 @@
 const Api = require('claudia-api-builder')
 const api = new Api()
 const getPizzas = require('./handlers/get-pizzas')
-
-api.get('/', () => 'Welcome to Pizza API')
+const createOrder = require('./handlers/create-order')
 
 api.get('/pizzas', () => {
   return getPizzas()
@@ -19,6 +18,20 @@ api.get(
   }
 )
 
+/**
+ * api.post(path, handler, options)
+ */
+api.post(
+  '/orders',
+  request => {
+    return createOrder(request.body)
+  },
+  {
+    success: 201, //returns 201 Created
+    error: 400, //returns 400 Bad Request
+  }
+)
+
 module.exports = api
 
-// '/pizzas/:id' in Express.js
+// '/pizzas/{id}' is '/pizzas/:id' in Express.js
